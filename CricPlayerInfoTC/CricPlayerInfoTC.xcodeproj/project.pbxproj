@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB15B7CD260918B400FBA98D /* PlayerInfoGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB15B7CC260918B400FBA98D /* PlayerInfoGridViewController.swift */; };
+		DB15B7D026091EFD00FBA98D /* PlayerProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB15B7CF26091EFD00FBA98D /* PlayerProfileCollectionViewCell.swift */; };
 		DBEEB79A2608DAB00019EF34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEEB7992608DAB00019EF34 /* AppDelegate.swift */; };
 		DBEEB79C2608DAB00019EF34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEEB79B2608DAB00019EF34 /* SceneDelegate.swift */; };
 		DBEEB79E2608DAB00019EF34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEEB79D2608DAB00019EF34 /* ViewController.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DB15B7CC260918B400FBA98D /* PlayerInfoGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInfoGridViewController.swift; sourceTree = "<group>"; };
+		DB15B7CF26091EFD00FBA98D /* PlayerProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		DBEEB7962608DAB00019EF34 /* CricPlayerInfoTC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CricPlayerInfoTC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBEEB7992608DAB00019EF34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBEEB79B2608DAB00019EF34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				DBEEB7992608DAB00019EF34 /* AppDelegate.swift */,
 				DBEEB79B2608DAB00019EF34 /* SceneDelegate.swift */,
 				DBEEB79D2608DAB00019EF34 /* ViewController.swift */,
+				DB15B7CC260918B400FBA98D /* PlayerInfoGridViewController.swift */,
+				DB15B7CF26091EFD00FBA98D /* PlayerProfileCollectionViewCell.swift */,
 				DBEEB79F2608DAB00019EF34 /* Main.storyboard */,
 				DBEEB7B3260905D30019EF34 /* PlayerInfoViewController.swift */,
 				DBEEB7AE2608E4760019EF34 /* PlayerProfileTableViewCell.swift */,
@@ -143,9 +149,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB15B7D026091EFD00FBA98D /* PlayerProfileCollectionViewCell.swift in Sources */,
 				DBEEB7AF2608E4760019EF34 /* PlayerProfileTableViewCell.swift in Sources */,
 				DBEEB79E2608DAB00019EF34 /* ViewController.swift in Sources */,
 				DBEEB79A2608DAB00019EF34 /* AppDelegate.swift in Sources */,
+				DB15B7CD260918B400FBA98D /* PlayerInfoGridViewController.swift in Sources */,
 				DBEEB79C2608DAB00019EF34 /* SceneDelegate.swift in Sources */,
 				DBEEB7B4260905D30019EF34 /* PlayerInfoViewController.swift in Sources */,
 			);
