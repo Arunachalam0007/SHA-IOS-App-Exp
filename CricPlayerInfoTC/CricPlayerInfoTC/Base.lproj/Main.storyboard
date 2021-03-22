@@ -59,11 +59,45 @@
                     </view>
                     <connections>
                         <outlet property="playerInfoTableView" destination="YNw-Xd-m8l" id="myc-1X-5rz"/>
+                        <segue destination="bwP-4K-3Ho" kind="presentation" identifier="playerInfoIdentifier" id="4Nq-yR-Gvz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="34.782608695652179" y="77.678571428571431"/>
+        </scene>
+        <!--Player Info View Controller-->
+        <scene sceneID="Yb4-kw-9y7">
+            <objects>
+                <viewController id="bwP-4K-3Ho" customClass="PlayerInfoViewController" customModule="CricPlayerInfoTC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H7Z-ok-R4N">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SAv-3c-0gf">
+                                <rect key="frame" x="46" y="116" width="325" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSL-j5-cYr">
+                                <rect key="frame" x="54" y="464" width="306" height="192"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aZV-v1-23w"/>
+                        <color key="backgroundColor" red="0.94509804249999996" green="0.60392159219999997" blue="0.21960783" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FIY-dG-Q3e"/>
+                    <connections>
+                        <outlet property="playerProfileInfoName" destination="NSL-j5-cYr" id="xJY-4R-ev1"/>
+                        <outlet property="playerProfileInfoPic" destination="SAv-3c-0gf" id="NmC-SC-0Cg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t1D-el-5XS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="966.66666666666674" y="77.678571428571431"/>
         </scene>
     </scenes>
     <resources>
