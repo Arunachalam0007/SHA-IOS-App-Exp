@@ -13,6 +13,7 @@
 		DBEEB7A12608DAB00019EF34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBEEB79F2608DAB00019EF34 /* Main.storyboard */; };
 		DBEEB7A32608DAB20019EF34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBEEB7A22608DAB20019EF34 /* Assets.xcassets */; };
 		DBEEB7A62608DAB20019EF34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBEEB7A42608DAB20019EF34 /* LaunchScreen.storyboard */; };
+		DBEEB7AF2608E4760019EF34 /* PlayerProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEEB7AE2608E4760019EF34 /* PlayerProfileTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		DBEEB7A22608DAB20019EF34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBEEB7A52608DAB20019EF34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DBEEB7A72608DAB20019EF34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBEEB7AE2608E4760019EF34 /* PlayerProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProfileTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				DBEEB79B2608DAB00019EF34 /* SceneDelegate.swift */,
 				DBEEB79D2608DAB00019EF34 /* ViewController.swift */,
 				DBEEB79F2608DAB00019EF34 /* Main.storyboard */,
+				DBEEB7AE2608E4760019EF34 /* PlayerProfileTableViewCell.swift */,
 				DBEEB7A22608DAB20019EF34 /* Assets.xcassets */,
 				DBEEB7A42608DAB20019EF34 /* LaunchScreen.storyboard */,
 				DBEEB7A72608DAB20019EF34 /* Info.plist */,
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBEEB7AF2608E4760019EF34 /* PlayerProfileTableViewCell.swift in Sources */,
 				DBEEB79E2608DAB00019EF34 /* ViewController.swift in Sources */,
 				DBEEB79A2608DAB00019EF34 /* AppDelegate.swift in Sources */,
 				DBEEB79C2608DAB00019EF34 /* SceneDelegate.swift in Sources */,
