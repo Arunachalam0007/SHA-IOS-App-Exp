@@ -21,17 +21,14 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var profilePicXOrigin = 0.0
-        var profilePicYOrigin = 0.0
         let profile =  tableView.dequeueReusableCell(withIdentifier: playerProfileTabCellIdentifier, for: indexPath) as! PlayerProfileTableViewCell
         
         profile.playerProfileName.text = playerProfile[indexPath.item]
         profile.playerProfilePic.image = UIImage(named: playerProfile[indexPath.item])
-        profilePicXOrigin =  Double(profile.playerProfilePic.frame.origin.x)
-        profilePicYOrigin =  Double(profile.playerProfilePic.frame.origin.y)
-        profile.playerProfilePic.frame = CGRect(x: profilePicXOrigin, y: profilePicYOrigin, width: 200, height: 200)
-        profile.playerProfilePic.layer.cornerRadius = profile.playerProfilePic.frame.height/3
-        profile.clipsToBounds = true
+        profile.playerProfilePic.layer.cornerRadius = profile.playerProfilePic.frame.height/5
+        profile.playerProfilePic.layer.borderWidth = 3.0
+        profile.playerProfilePic.layer.backgroundColor = UIColor.black.cgColor
+
         return profile
     }
     
