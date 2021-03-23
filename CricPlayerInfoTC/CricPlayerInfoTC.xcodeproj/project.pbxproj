@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DB15B7CD260918B400FBA98D /* PlayerInfoGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB15B7CC260918B400FBA98D /* PlayerInfoGridViewController.swift */; };
 		DB15B7D026091EFD00FBA98D /* PlayerProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB15B7CF26091EFD00FBA98D /* PlayerProfileCollectionViewCell.swift */; };
+		DB17545B260A271300C18B76 /* PlayerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB17545A260A271300C18B76 /* PlayerInfo.swift */; };
 		DBEEB79A2608DAB00019EF34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEEB7992608DAB00019EF34 /* AppDelegate.swift */; };
 		DBEEB79C2608DAB00019EF34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEEB79B2608DAB00019EF34 /* SceneDelegate.swift */; };
 		DBEEB79E2608DAB00019EF34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEEB79D2608DAB00019EF34 /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		DB15B7CC260918B400FBA98D /* PlayerInfoGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInfoGridViewController.swift; sourceTree = "<group>"; };
 		DB15B7CF26091EFD00FBA98D /* PlayerProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProfileCollectionViewCell.swift; sourceTree = "<group>"; };
+		DB17545A260A271300C18B76 /* PlayerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInfo.swift; sourceTree = "<group>"; };
 		DBEEB7962608DAB00019EF34 /* CricPlayerInfoTC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CricPlayerInfoTC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBEEB7992608DAB00019EF34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBEEB79B2608DAB00019EF34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +47,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB175456260A24A900C18B76 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DBEEB79F2608DAB00019EF34 /* Main.storyboard */,
+				DBEEB7A42608DAB20019EF34 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DB175458260A24EC00C18B76 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DB15B7CC260918B400FBA98D /* PlayerInfoGridViewController.swift */,
+				DB15B7CF26091EFD00FBA98D /* PlayerProfileCollectionViewCell.swift */,
+				DBEEB7B3260905D30019EF34 /* PlayerInfoViewController.swift */,
+				DBEEB7AE2608E4760019EF34 /* PlayerProfileTableViewCell.swift */,
+				DBEEB79D2608DAB00019EF34 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DB17545D260A271D00C18B76 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DB17545A260A271300C18B76 /* PlayerInfo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		DBEEB78D2608DAB00019EF34 = {
 			isa = PBXGroup;
 			children = (
@@ -66,14 +97,10 @@
 			children = (
 				DBEEB7992608DAB00019EF34 /* AppDelegate.swift */,
 				DBEEB79B2608DAB00019EF34 /* SceneDelegate.swift */,
-				DBEEB79D2608DAB00019EF34 /* ViewController.swift */,
-				DB15B7CC260918B400FBA98D /* PlayerInfoGridViewController.swift */,
-				DB15B7CF26091EFD00FBA98D /* PlayerProfileCollectionViewCell.swift */,
-				DBEEB79F2608DAB00019EF34 /* Main.storyboard */,
-				DBEEB7B3260905D30019EF34 /* PlayerInfoViewController.swift */,
-				DBEEB7AE2608E4760019EF34 /* PlayerProfileTableViewCell.swift */,
+				DB17545D260A271D00C18B76 /* Models */,
+				DB175458260A24EC00C18B76 /* Controllers */,
 				DBEEB7A22608DAB20019EF34 /* Assets.xcassets */,
-				DBEEB7A42608DAB20019EF34 /* LaunchScreen.storyboard */,
+				DB175456260A24A900C18B76 /* Views */,
 				DBEEB7A72608DAB20019EF34 /* Info.plist */,
 			);
 			path = CricPlayerInfoTC;
@@ -153,6 +180,7 @@
 				DBEEB7AF2608E4760019EF34 /* PlayerProfileTableViewCell.swift in Sources */,
 				DBEEB79E2608DAB00019EF34 /* ViewController.swift in Sources */,
 				DBEEB79A2608DAB00019EF34 /* AppDelegate.swift in Sources */,
+				DB17545B260A271300C18B76 /* PlayerInfo.swift in Sources */,
 				DB15B7CD260918B400FBA98D /* PlayerInfoGridViewController.swift in Sources */,
 				DBEEB79C2608DAB00019EF34 /* SceneDelegate.swift in Sources */,
 				DBEEB7B4260905D30019EF34 /* PlayerInfoViewController.swift in Sources */,
