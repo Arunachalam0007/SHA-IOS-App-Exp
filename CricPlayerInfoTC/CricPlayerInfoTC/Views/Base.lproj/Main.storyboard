@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="upf-od-Bug">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CricPlayerInfoTC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YNw-Xd-m8l">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="playerProfileTabCell" rowHeight="227" id="Wj2-2j-hW3" customClass="PlayerProfileTableViewCell" customModule="CricPlayerInfoTC" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="227"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Wj2-2j-hW3" id="WO8-8x-kez">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="227"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fbx-Ze-qxN">
+                                                    <rect key="frame" x="20" y="33" width="206" height="159"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYd-ax-bUF">
+                                                    <rect key="frame" x="253" y="81" width="121" height="64"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="playerProfileName" destination="eYd-ax-bUF" id="TGH-DL-650"/>
+                                            <outlet property="playerProfilePic" destination="Fbx-Ze-qxN" id="BXS-c0-Dha"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.32549020649999999" green="0.88235294819999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YNw-Xd-m8l" secondAttribute="trailing" id="IvR-BF-481"/>
+                            <constraint firstItem="YNw-Xd-m8l" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XoJ-g3-0Jr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="YNw-Xd-m8l" secondAttribute="bottom" id="iR4-U1-8qI"/>
+                            <constraint firstItem="YNw-Xd-m8l" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rPC-JX-tS1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Hlr-yo-8yU"/>
+                    <connections>
+                        <outlet property="playerInfoTableView" destination="YNw-Xd-m8l" id="myc-1X-5rz"/>
+                        <segue destination="bwP-4K-3Ho" kind="show" identifier="playerInfoIdentifier" id="4Nq-yR-Gvz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1855.072463768116" y="77.678571428571431"/>
+        </scene>
+        <!--Player Info Grid View Controller-->
+        <scene sceneID="clG-Tr-UrH">
+            <objects>
+                <viewController id="OfL-Ye-kbU" customClass="PlayerInfoGridViewController" customModule="CricPlayerInfoTC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TZa-hn-7c1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lhc-fm-Cpo">
+                                <rect key="frame" x="20" y="44" width="374" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kE3-DU-fOm">
+                                    <size key="itemSize" width="270" height="337"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="playerProfileCollectionCell" id="zzf-06-9Qi" customClass="PlayerProfileCollectionViewCell" customModule="CricPlayerInfoTC" customModuleProvider="target">
+                                        <rect key="frame" x="52" y="0.0" width="270" height="337"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yKC-6I-xH9">
+                                            <rect key="frame" x="0.0" y="0.0" width="270" height="337"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O9d-BS-lqo">
+                                                    <rect key="frame" x="18" y="17" width="235" height="209"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHg-nx-TGl">
+                                                    <rect key="frame" x="8" y="225" width="199" height="41"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="270" height="337"/>
+                                        <connections>
+                                            <outlet property="playerGridProfileName" destination="rHg-nx-TGl" id="J3U-pE-Abl"/>
+                                            <outlet property="playerGridProfilePic" destination="O9d-BS-lqo" id="hav-cp-QMp"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rx0-M8-4jn"/>
+                        <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="rx0-M8-4jn" firstAttribute="trailing" secondItem="lhc-fm-Cpo" secondAttribute="trailing" id="5Nk-eG-l1d"/>
+                            <constraint firstItem="rx0-M8-4jn" firstAttribute="bottom" secondItem="lhc-fm-Cpo" secondAttribute="bottom" id="Afg-e8-YzX"/>
+                            <constraint firstItem="lhc-fm-Cpo" firstAttribute="leading" secondItem="rx0-M8-4jn" secondAttribute="leading" id="Il6-or-J8T"/>
+                            <constraint firstItem="lhc-fm-Cpo" firstAttribute="top" secondItem="rx0-M8-4jn" secondAttribute="top" id="tok-LX-cv6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="qk6-mg-jPf"/>
+                    <connections>
+                        <outlet property="playerInfoCollectionView" destination="lhc-fm-Cpo" id="ch3-N3-BfR"/>
+                        <segue destination="bwP-4K-3Ho" kind="show" identifier="playerInfoIdentifier" id="9yE-XZ-QlA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sKI-rg-8uw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1855.072463768116" y="792.85714285714278"/>
+        </scene>
+        <!--Player Info View Controller-->
+        <scene sceneID="Yb4-kw-9y7">
+            <objects>
+                <viewController id="bwP-4K-3Ho" customClass="PlayerInfoViewController" customModule="CricPlayerInfoTC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H7Z-ok-R4N">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SAv-3c-0gf">
+                                <rect key="frame" x="46" y="116" width="325" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSL-j5-cYr">
+                                <rect key="frame" x="54" y="464" width="306" height="192"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aZV-v1-23w"/>
+                        <color key="backgroundColor" red="0.94509804249999996" green="0.60392159219999997" blue="0.21960783" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FIY-dG-Q3e"/>
+                    <connections>
+                        <outlet property="playerProfileInfoName" destination="NSL-j5-cYr" id="xJY-4R-ev1"/>
+                        <outlet property="playerProfileInfoPic" destination="SAv-3c-0gf" id="NmC-SC-0Cg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t1D-el-5XS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3875.36231884058" y="439.95535714285711"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="SXc-eS-kOo">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="upf-od-Bug" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NT5-o9-NsV">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="nrd-ef-irg" kind="relationship" relationship="viewControllers" id="8Fy-KK-syd"/>
+                        <segue destination="uDq-AO-NTj" kind="relationship" relationship="viewControllers" id="PnW-Y0-2Tr"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5sw-2a-85L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="34.782608695652179" y="435.26785714285711"/>
+        </scene>
+        <!--List -->
+        <scene sceneID="YCC-10-Aq6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nrd-ef-irg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="List " id="Y29-MJ-hbf"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WpV-EQ-XBb">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="4qp-5e-kEq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fD4-sJ-Xqh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="944.92753623188412" y="77.678571428571431"/>
+        </scene>
+        <!--Grid-->
+        <scene sceneID="HA8-O6-5mU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uDq-AO-NTj" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Grid" id="BEH-7y-0XO"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="E6A-81-W9X">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="OfL-Ye-kbU" kind="relationship" relationship="rootViewController" id="K1d-2L-cCH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bxc-ri-gyX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="944.92753623188412" y="792.85714285714278"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="9yE-XZ-QlA"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
