@@ -28,10 +28,10 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         playerProfile.playerProfileName.text = playerInfo[indexPath.item]
         playerProfile.playerProfilePic.image = UIImage(named: playerInfo[indexPath.item])
         
-        // imageview cornerRadius and border
-        playerProfile.playerProfilePic.layer.cornerRadius = playerProfile.playerProfilePic.frame.height/5
-        playerProfile.playerProfilePic.layer.borderWidth = 3.0
-        playerProfile.playerProfilePic.layer.backgroundColor = UIColor.black.cgColor
+        playerProfile.playerProfilePic.layer.cornerRadius = 20
+        playerProfile.playerProfilePic.layer.borderWidth = 3
+        playerProfile.playerProfilePic.layer.borderColor = UIColor.black.cgColor
+        playerProfile.playerProfilePic.contentMode = .scaleAspectFill
         
         return playerProfile
     }

@@ -24,6 +24,18 @@ class PlayerInfoGridViewController: UIViewController, UICollectionViewDataSource
         let playerProfile = collectionView.dequeueReusableCell(withReuseIdentifier: playerProfileCollectionCellIdentifier, for: indexPath) as! PlayerProfileCollectionViewCell
         playerProfile.playerGridProfileName.text = playerInfo[indexPath.item]
         playerProfile.playerGridProfilePic.image = UIImage(named: playerInfo[indexPath.item])
+        
+        
+        let xOrigin = playerProfile.playerGridProfilePic.frame.origin.x
+        let yOrigin = playerProfile.playerGridProfilePic.frame.origin.y
+        
+        playerProfile.playerGridProfilePic.frame = CGRect(x: xOrigin, y: yOrigin, width: 180, height: 180)
+        playerProfile.playerGridProfilePic.layer.cornerRadius = playerProfile.playerGridProfilePic.frame.height/2
+        playerProfile.playerGridProfilePic.layer.borderColor = UIColor.black.cgColor
+        playerProfile.playerGridProfilePic.layer.borderWidth = 3
+        playerProfile.playerGridProfilePic.clipsToBounds = true
+        playerProfile.playerGridProfilePic.contentMode =  .scaleAspectFill
+        
         return playerProfile
     }
     
@@ -71,7 +83,7 @@ class PlayerInfoGridViewController: UIViewController, UICollectionViewDataSource
         // playerInfoVC.playerProfileInfoPic.image = UIImage(named: "Raina Four")
         
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         playerInfoCollectionView.dataSource = self
@@ -80,5 +92,5 @@ class PlayerInfoGridViewController: UIViewController, UICollectionViewDataSource
         // Do any additional setup after loading the view.
     }
     
-
+    
 }
