@@ -35,7 +35,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYd-ax-bUF">
                                                     <rect key="frame" x="253" y="81" width="121" height="64"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -116,7 +116,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rx0-M8-4jn"/>
-                        <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.60784316059999999" green="0.109803915" blue="0.1215686351" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="rx0-M8-4jn" firstAttribute="trailing" secondItem="lhc-fm-Cpo" secondAttribute="trailing" id="5Nk-eG-l1d"/>
                             <constraint firstItem="rx0-M8-4jn" firstAttribute="bottom" secondItem="lhc-fm-Cpo" secondAttribute="bottom" id="Afg-e8-YzX"/>
@@ -173,6 +173,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="upf-od-Bug" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NT5-o9-NsV">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -189,7 +190,7 @@
         <scene sceneID="YCC-10-Aq6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nrd-ef-irg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="List " id="Y29-MJ-hbf"/>
+                    <tabBarItem key="tabBarItem" title="List " image="list.dash" catalog="system" id="Y29-MJ-hbf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WpV-EQ-XBb">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -208,7 +209,7 @@
         <scene sceneID="HA8-O6-5mU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uDq-AO-NTj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Grid" id="BEH-7y-0XO"/>
+                    <tabBarItem key="tabBarItem" title="Grid" image="square.grid.3x3.fill" catalog="system" id="BEH-7y-0XO"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="E6A-81-W9X">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -225,9 +226,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9yE-XZ-QlA"/>
+        <segue reference="4Nq-yR-Gvz"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="list.dash" catalog="system" width="128" height="85"/>
+        <image name="square.grid.3x3.fill" catalog="system" width="128" height="112"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

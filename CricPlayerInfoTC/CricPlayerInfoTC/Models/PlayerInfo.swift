@@ -8,5 +8,5 @@
 import Foundation
 
 struct PlayerInfo {
-    var playerInfoName : [String] = [ "Raina Four", "Raina Six", "Raina 100", "Raina Catch", "Raina Wicket", "Raina Out"]
+    var playerProfile : [String] = [ "Raina Four", "Raina Six", "Raina 100", "Raina Catch", "Raina Wicket", "Raina Out"]
 }

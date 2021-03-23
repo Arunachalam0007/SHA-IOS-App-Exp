@@ -11,13 +11,13 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     
     @IBOutlet weak var playerInfoTableView: UITableView!
     
-    var playerInfo : [String] = [ "Raina Four", "Raina Six", "Raina 100", "Raina Catch", "Raina Wicket", "Raina Out"]
+    var playerInfo =  PlayerInfo()
     
     var playerProfileTabCellIdentifier: String = "playerProfileTabCell"
     
     // datasource - numberOfRowssInSection
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return playerInfo.count
+        return playerInfo.playerProfile.count
     }
     
     // datasource - cellForRowAt
@@ -25,8 +25,8 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         
         let playerProfile =  tableView.dequeueReusableCell(withIdentifier: playerProfileTabCellIdentifier, for: indexPath) as! PlayerProfileTableViewCell
         
-        playerProfile.playerProfileName.text = playerInfo[indexPath.item]
-        playerProfile.playerProfilePic.image = UIImage(named: playerInfo[indexPath.item])
+        playerProfile.playerProfileName.text = playerInfo.playerProfile[indexPath.item]
+        playerProfile.playerProfilePic.image = UIImage(named: playerInfo.playerProfile[indexPath.item])
         
         playerProfile.playerProfilePic.layer.cornerRadius = 20
         playerProfile.playerProfilePic.layer.borderWidth = 3
@@ -73,17 +73,10 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         
         // segue destination - destination viewcontroller
         let playerInfoVC = segue.destination as! PlayerInfoViewController
-        let profileName = sender as! String
-        print(profileName)
-        
+        let profileName = sender as! String        
         playerInfoVC.playerName = profileName
-        // playerInfoVC.playerProfileInfoName.text = "Test"
-        // playerInfoVC.playerProfileInfoName.text = "Raina Four"
-        // playerInfoVC.playerProfileInfoPic.image = UIImage(named: "Raina Four")
         
     }
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

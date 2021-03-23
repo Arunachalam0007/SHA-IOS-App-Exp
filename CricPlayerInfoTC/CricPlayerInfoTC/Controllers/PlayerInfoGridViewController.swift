@@ -12,18 +12,20 @@ class PlayerInfoGridViewController: UIViewController, UICollectionViewDataSource
     
     @IBOutlet weak var playerInfoCollectionView: UICollectionView!
     
-    var playerInfo : [String] = [ "Raina Four", "Raina Six", "Raina 100", "Raina Catch", "Raina Wicket", "Raina Out"]
+    var playerInfo =  PlayerInfo()
     
     var playerProfileCollectionCellIdentifier: String = "playerProfileCollectionCell"
     
+    // datasourse - numberOfItemsInSection
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return playerInfo.count
+        return playerInfo.playerProfile.count
     }
     
+    // datasourse - cellForItemAt
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let playerProfile = collectionView.dequeueReusableCell(withReuseIdentifier: playerProfileCollectionCellIdentifier, for: indexPath) as! PlayerProfileCollectionViewCell
-        playerProfile.playerGridProfileName.text = playerInfo[indexPath.item]
-        playerProfile.playerGridProfilePic.image = UIImage(named: playerInfo[indexPath.item])
+        playerProfile.playerGridProfileName.text = playerInfo.playerProfile[indexPath.item]
+        playerProfile.playerGridProfilePic.image = UIImage(named: playerInfo.playerProfile[indexPath.item])
         
         
         let xOrigin = playerProfile.playerGridProfilePic.frame.origin.x
@@ -39,11 +41,13 @@ class PlayerInfoGridViewController: UIViewController, UICollectionViewDataSource
         return playerProfile
     }
     
+    //UICollectionViewDelegateFlowLayout - layout for height
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         return CGSize(width: 200, height: 300)
     }
     
+    //UICollectionViewDelegate - profile got selected
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let playerProfile = collectionView.cellForItem(at: indexPath) as! PlayerProfileCollectionViewCell
         let playerName = playerProfile.playerGridProfileName.text
@@ -75,12 +79,7 @@ class PlayerInfoGridViewController: UIViewController, UICollectionViewDataSource
         // segue destination - destination viewcontroller
         let playerInfoVC = segue.destination as! PlayerInfoViewController
         let profileName = sender as! String
-        print(profileName)
-        
         playerInfoVC.playerName = profileName
-        // playerInfoVC.playerProfileInfoName.text = "Test"
-        // playerInfoVC.playerProfileInfoName.text = "Raina Four"
-        // playerInfoVC.playerProfileInfoPic.image = UIImage(named: "Raina Four")
         
     }
     
