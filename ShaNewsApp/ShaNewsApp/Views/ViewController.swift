@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var newsTable: UITableView!
     
     var arrNewsUrlToImage = [String]()
@@ -31,16 +31,14 @@ class ViewController: UIViewController {
         guard let url = URL(string: newsURL) else { return }
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             
-//            guard let e != error else {
-//                print("NEWS API ERROR: ",error)
-//                return
-//            }
+            //            guard let e != error else {
+            //                print("NEWS API ERROR: ",error)
+            //                return
+            //            }
             
             if let newsData = data {
                 do {
                     let parseNewsData = try JSONDecoder().decode(NewsData.self, from: newsData)
-                   // print(parseNewsData.articles?.source?.name)
-                
                     if let articles = parseNewsData.articles {
                         for article in articles {
                             if let newsTitle = article.title, let newsDescription = article.description, let newsPublishedAt = article.publishedAt, let newsUrlToImage = article.urlToImage, let newsUrl = article.url    {
@@ -56,18 +54,16 @@ class ViewController: UIViewController {
                         }
                     }
                     
+                    // reload table so that new changes will store
                     DispatchQueue.main.async {
                         self.newsTable.reloadData()
                     }
-                    
                     
                 } catch  {
                     print(error)
                 }
                 
             }
-            
-            
         }
         task.resume()
     }
@@ -107,5 +103,16 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         450
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "NewsPage", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if let newsViewController = segue.destination as? NewsPageViewController, let selectedNews = self.newsTable.indexPathForSelectedRow?.item {
+            newsViewController.newsWebUrl =  arrNewsUrl[selectedNews]
+        }
+        
     }
 }

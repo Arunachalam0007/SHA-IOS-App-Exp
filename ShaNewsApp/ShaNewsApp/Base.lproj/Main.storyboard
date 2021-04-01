@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IyL-Tk-SLj">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xwi-Pz-eaE">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsCell" rowHeight="444" id="6tC-Vx-49o" customClass="NewsTableViewCell" customModule="ShaNewsApp" customModuleProvider="target">
@@ -73,31 +73,75 @@
                             <constraint firstItem="Xwi-Pz-eaE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iSe-sM-a2f"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="5U2-oW-Tm9"/>
                     <connections>
                         <outlet property="newsTable" destination="Xwi-Pz-eaE" id="bCn-e2-S7W"/>
+                        <segue destination="fxV-EF-auO" kind="show" identifier="NewsPage" id="hw1-LO-gVr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="18.840579710144929" y="77.678571428571431"/>
+            <point key="canvasLocation" x="928.98550724637687" y="77.678571428571431"/>
         </scene>
-        <!--News Page View Controller-->
+        <!--ShaNewsApp-->
         <scene sceneID="efP-4o-qfr">
             <objects>
                 <viewController id="fxV-EF-auO" customClass="NewsPageViewController" customModule="ShaNewsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rSL-UL-uwL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X8P-Mk-Lj1">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="T19-Q5-K37"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="T19-Q5-K37" firstAttribute="bottom" secondItem="X8P-Mk-Lj1" secondAttribute="bottom" id="6eO-Bf-ddA"/>
+                            <constraint firstItem="X8P-Mk-Lj1" firstAttribute="leading" secondItem="T19-Q5-K37" secondAttribute="leading" id="PGU-zE-451"/>
+                            <constraint firstItem="T19-Q5-K37" firstAttribute="trailing" secondItem="X8P-Mk-Lj1" secondAttribute="trailing" id="Xlk-ZD-okS"/>
+                            <constraint firstItem="X8P-Mk-Lj1" firstAttribute="top" secondItem="T19-Q5-K37" secondAttribute="top" id="x5K-IH-gXZ"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="ShaNewsApp" id="klw-0J-ddQ"/>
+                    <connections>
+                        <outlet property="newsWebView" destination="X8P-Mk-Lj1" id="bRP-03-czV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iAV-U9-5mO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1074" y="78"/>
+            <point key="canvasLocation" x="1773.913043478261" y="77.678571428571431"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bxO-J4-HER">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IyL-Tk-SLj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorTransitionMaskImage="Sha News App" id="u6k-vz-i9Z">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="1" green="0.3947608501" blue="0.48998185220000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ev8-Oy-y1v"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uVm-SJ-vCh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="77.678571428571431"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Sha News App" width="128" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -63,13 +63,11 @@
 			isa = PBXGroup;
 			children = (
 				DB20862B26164D820013F2E8 /* Assets.xcassets */,
-				DB2086252616359F0013F2E8 /* Models */,
 				DB20860D2616063A0013F2E8 /* AppDelegate.swift */,
 				DB20860F2616063A0013F2E8 /* SceneDelegate.swift */,
-				DB20862E26164F850013F2E8 /* NewsPageViewController.swift */,
-				DB2086112616063A0013F2E8 /* ViewController.swift */,
+				DB208631261650D20013F2E8 /* Views */,
+				DB2086252616359F0013F2E8 /* Models */,
 				DB2086132616063A0013F2E8 /* Main.storyboard */,
-				DB20862226162EA40013F2E8 /* NewsTableViewCell.swift */,
 				DB2086182616063B0013F2E8 /* LaunchScreen.storyboard */,
 				DB20861B2616063B0013F2E8 /* Info.plist */,
 			);
@@ -82,6 +80,16 @@
 				DB208626261635CC0013F2E8 /* NewsData.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		DB208631261650D20013F2E8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DB2086112616063A0013F2E8 /* ViewController.swift */,
+				DB20862E26164F850013F2E8 /* NewsPageViewController.swift */,
+				DB20862226162EA40013F2E8 /* NewsTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

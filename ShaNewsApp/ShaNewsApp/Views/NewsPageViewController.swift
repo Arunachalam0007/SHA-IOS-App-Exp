@@ -6,12 +6,27 @@
 //
 
 import UIKit
+import WebKit
 
 class NewsPageViewController: UIViewController {
 
+    @IBOutlet weak var newsWebView: WKWebView!
+    
+    var newsWebUrl:String = ""
+    
+//    func showNewsWebView(newsWebURL: String) {
+//        guard let url = URL(string: newsWebURL) else { return }
+//        newsWebView.load(URLRequest(url: url))
+//
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        guard let url = URL(string: newsWebUrl) else { return }
+        newsWebView.load(URLRequest(url: url))
+        
+       // showNewsWebView(newsWebURL: newsWebUrl)
         // Do any additional setup after loading the view.
     }
     
