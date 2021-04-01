@@ -9,11 +9,103 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var newsTable: UITableView!
+    
+    var arrNewsUrlToImage = [String]()
+    var arrNewsTitle = [String]()
+    var arrNewsDescription = [String]()
+    var arrNewsUrl = [String]()
+    var arrPublishedAt = [String]()
+    var arrNewsPageName = [String]()
+    var newsURL = "https://newsapi.org/v2/top-headlines?country=in&from=2021-03-01&apiKey=8127a083c42b477e899dc3634a8a2204"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        newsTable.dataSource = self
+        newsTable.delegate = self
+        updateNewsData()
     }
-
-
+    
+    func updateNewsData()  {
+        guard let url = URL(string: newsURL) else { return }
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            
+//            guard let e != error else {
+//                print("NEWS API ERROR: ",error)
+//                return
+//            }
+            
+            if let newsData = data {
+                do {
+                    let parseNewsData = try JSONDecoder().decode(NewsData.self, from: newsData)
+                   // print(parseNewsData.articles?.source?.name)
+                
+                    if let articles = parseNewsData.articles {
+                        for article in articles {
+                            if let newsTitle = article.title, let newsDescription = article.description, let newsPublishedAt = article.publishedAt, let newsUrlToImage = article.urlToImage, let newsUrl = article.url    {
+                                self.arrPublishedAt.append(newsPublishedAt)
+                                self.arrNewsTitle.append(newsTitle)
+                                self.arrNewsDescription.append(newsDescription)
+                                self.arrNewsUrlToImage.append(newsUrlToImage)
+                                self.arrNewsUrl.append(newsUrl)
+                                if let source = article.source, let name = source.name {
+                                    self.arrNewsPageName.append(name)
+                                }
+                            }
+                        }
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self.newsTable.reloadData()
+                    }
+                    
+                    
+                } catch  {
+                    print(error)
+                }
+                
+            }
+            
+            
+        }
+        task.resume()
+    }
+    
 }
 
+extension ViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        arrNewsTitle.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let newsCell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! NewsTableViewCell
+        newsCell.newsTitleLabel.text = arrNewsTitle[indexPath.item]
+        newsCell.newsContent.text = arrNewsDescription[indexPath.item]
+        newsCell.newsDateLabel.text = arrPublishedAt[indexPath.item]
+        // get Network Image
+        if let newsURLImage = arrNewsUrlToImage[indexPath.item] as? String, let urlImage = URL(string: newsURLImage) {
+            
+            if let imageData = try? Data(contentsOf: urlImage) {
+                newsCell.newsImage.image = UIImage(data: imageData)
+            } else {
+                newsCell.newsImage.image = UIImage(named: "News")
+            }
+            
+        } else {
+            newsCell.newsImage.image = UIImage(named: "News")
+        }
+        return newsCell
+    }
+    
+    
+}
+
+
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        450
+    }
+}
