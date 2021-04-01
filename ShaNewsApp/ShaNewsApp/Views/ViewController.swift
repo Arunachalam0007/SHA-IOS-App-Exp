@@ -36,6 +36,7 @@ class ViewController: UIViewController {
             //                return
             //            }
             
+            print("Called")
             if let newsData = data {
                 do {
                     let parseNewsData = try JSONDecoder().decode(NewsData.self, from: newsData)
