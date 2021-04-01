@@ -60,11 +60,11 @@ class PlayerInfoGridViewController: UIViewController, UICollectionViewDataSource
     func onSelectedProfile(profileName: String) {
         
         let profileAlert = UIAlertController(title: "Info!", message: profileName, preferredStyle: UIAlertController.Style.alert)
-        
         // add the actions (buttons)
         profileAlert.addAction(UIAlertAction(title: "Get Info", style: UIAlertAction.Style.default, handler: { (UIAlertAction) in
             // Navigation to next ViewController (Segue)
             self.performSegue(withIdentifier: "playerInfoIdentifier", sender: profileName)
+        
         }))
         
         // show the alert
@@ -77,9 +77,20 @@ class PlayerInfoGridViewController: UIViewController, UICollectionViewDataSource
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         // segue destination - destination viewcontroller
-        let playerInfoVC = segue.destination as! PlayerInfoViewController
-        let profileName = sender as! String
-        playerInfoVC.playerName = profileName
+        
+//        let playerInfoVC = segue.destination as! PlayerInfoViewController
+//        let profileName = sender as! String
+//        playerInfoVC.playerName = profileName
+        
+        if  let playerInfoVC = segue.destination as? PlayerInfoViewController {
+            
+            if let profileName = sender as? String {
+                    playerInfoVC.playerName = profileName
+            }
+
+        }
+
+        
         
     }
     
