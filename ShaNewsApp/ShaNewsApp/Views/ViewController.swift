@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     var arrNewsUrl = [String]()
     var arrPublishedAt = [String]()
     var arrNewsPageName = [String]()
-    var newsURL = "https://newsapi.org/v2/top-headlines?country=in&from=2021-03-01&apiKey=8127a083c42b477e899dc3634a8a2204"
+    var newsURL = "https://newsapi.org/v2/top-headlines?country=in&from=2021-04-01&apiKey=8127a083c42b477e899dc3634a8a2204"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +69,19 @@ class ViewController: UIViewController {
         task.resume()
     }
     
+    func getDateFormat( date: String) -> String {
+        
+        let dateFormatter = DateFormatter()
+        let tempLocale = dateFormatter.locale // save locale temporarily
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        let date = dateFormatter.date(from: date)!
+        dateFormatter.dateFormat = "MMM d, h:mm a"
+        dateFormatter.locale = tempLocale // reset the locale
+        let dateString = dateFormatter.string(from: date)
+        return dateString
+    }
+    
 }
 
 extension ViewController: UITableViewDataSource {
@@ -81,7 +94,10 @@ extension ViewController: UITableViewDataSource {
         let newsCell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as! NewsTableViewCell
         newsCell.newsTitleLabel.text = arrNewsTitle[indexPath.item]
         newsCell.newsContent.text = arrNewsDescription[indexPath.item]
-        newsCell.newsDateLabel.text = arrPublishedAt[indexPath.item]
+        
+        //DateFormat
+        newsCell.newsDateLabel.text = getDateFormat(date: arrPublishedAt[indexPath.item])
+        
         // get Network Image
         if let newsURLImage = arrNewsUrlToImage[indexPath.item] as? String, let urlImage = URL(string: newsURLImage) {
             
