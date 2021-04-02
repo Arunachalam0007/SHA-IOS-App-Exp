@@ -20,29 +20,28 @@ class NewsPageViewController: UIViewController {
 //
 //    }
     
+    func updateNavTitle() {
+        var charIndex = 0.0
+        let labelText = "📰 AK News App 📰"
+        title = ""
+        for text in labelText {
+            print("Timers: ", 0.5 * charIndex)
+            print(text)
+            print("------")
+            Timer.scheduledTimer(withTimeInterval: 0.5 * charIndex, repeats: false) { (timer) in
+                self.title?.append(text)
+            }
+            charIndex += 1
+
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        updateNavTitle()
         guard let url = URL(string: newsWebUrl) else { return }
         newsWebView.load(URLRequest(url: url))
-        
-        
-                var charIndex = 0.0
-                let labelText = "🤳🏼 Sha News App 🤳🏼"
-                title = ""
-                for text in labelText {
-                    print("Timers: ", 0.5 * charIndex)
-                    print(text)
-                    print("------")
-                    Timer.scheduledTimer(withTimeInterval: 0.5 * charIndex, repeats: false) { (timer) in
-                        self.title?.append(text)
-                    }
-                    charIndex += 1
-        
-                }
-        
-       // showNewsWebView(newsWebURL: newsWebUrl)
-        // Do any additional setup after loading the view.
+    
     }
     
 

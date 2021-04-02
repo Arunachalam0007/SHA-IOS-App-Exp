@@ -83,7 +83,7 @@
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="77.678571428571431"/>
         </scene>
-        <!--ShaNewsApp-->
+        <!--AKNewsApp-->
         <scene sceneID="efP-4o-qfr">
             <objects>
                 <viewController id="fxV-EF-auO" customClass="NewsPageViewController" customModule="ShaNewsApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -109,7 +109,9 @@
                             <constraint firstItem="X8P-Mk-Lj1" firstAttribute="top" secondItem="T19-Q5-K37" secondAttribute="top" id="x5K-IH-gXZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="ShaNewsApp" id="klw-0J-ddQ"/>
+                    <navigationItem key="navigationItem" title="AKNewsApp" id="klw-0J-ddQ">
+                        <barButtonItem key="backBarButtonItem" id="yXA-GG-ZJ4"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="newsWebView" destination="X8P-Mk-Lj1" id="bRP-03-czV"/>
                     </connections>
@@ -126,8 +128,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorTransitionMaskImage="Sha News App" id="u6k-vz-i9Z">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" red="1" green="0.3947608501" blue="0.48998185220000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="0.12883876720000001" blue="0.317547841" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
